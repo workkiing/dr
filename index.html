@@ -521,7 +521,44 @@ h2 {
     font-size: 23px;
   }
 }
+/* ПОДСКАЗКА МУЗЫКИ НА ПЕРВОМ СЛАЙДЕ */
 
+.music-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 32px auto 0;
+  padding: 13px 25px;
+  border: 1px solid rgba(212,180,119,.65);
+  background: rgba(20,30,25,.35);
+  color: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  animation: musicHint 2s ease-in-out infinite;
+}
+
+.music-hint .music-note {
+  font-size: 23px;
+}
+
+@keyframes musicHint {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 0 0 rgba(212,180,119,.25);
+  }
+  50% {
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(212,180,119,.25);
+  }
+}
+
+.music-hint:hover {
+  background: rgba(212,180,119,.18);
+}
 </style>
 </head>
 
@@ -548,9 +585,15 @@ h2 {
   <span class="gold">Авакяна Койруна</span> 🎉
 </h1>
 
-    <div class="divider"></div>
+<div class="divider"></div>
 
-  </div>
+<button class="music-hint" id="musicHint" type="button">
+  <span class="music-note">♪</span>
+  <span>Нажми сюда</span>
+  <span class="music-note">♫</span>
+</button>
+
+</div>
 </section>
 
 <!-- СЛАЙД 2: ДАТА И МЕСТО -->
@@ -756,7 +799,11 @@ document.querySelectorAll(".reveal").forEach(el => {
 
 const music = document.getElementById("backgroundMusic");
 const musicButton = document.getElementById("musicButton");
+const musicHint = document.getElementById("musicHint");
 
+musicHint.addEventListener("click", function() {
+  musicButton.click();
+});
 musicButton.addEventListener("click", async function() {
 
   if (music.paused) {
