@@ -192,7 +192,14 @@ h2 {
 }
 
 .first-slide h1 {
-  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(25px, 4vw, 36px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: .2px;
+  max-width: 540px;
+  margin: 0 auto 25px;
+  color: #f5eddf;
 }
 
 .first-slide .description {
@@ -446,6 +453,12 @@ h2 {
   .form select {
     font-size: 16px;
   }
+  .first-slide h1 {
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 0 5px;
+  letter-spacing: 0;
+}
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -468,9 +481,10 @@ h2 {
 
     <div class="eyebrow">Приглашение на юбилей</div>
 
-    <h1>
-      Торжественно приглашаем Вас на юбилей нашего дорогого папы и дедушки — Авакяна Койруна
-    </h1>
+   <h1>
+  Торжественно приглашаем Вас на юбилей нашего дорогого папы и дедушки —
+  <span class="gold">Авакяна Койруна</span>
+</h1>
 
     <div class="divider"></div>
 
