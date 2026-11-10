@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#24352f">
+
+<title>Юбилей Авакяна Койруна — 70 лет</title>
+<meta name="description" content="Приглашение на юбилей нашего дорогого папы и дедушки Авакяна Койруна. 2 января 2027 года.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #24352f;
+  --green-light: #35483e;
+  --gold: #d4b477;
+  --cream: #f5eddf;
+  --white: #fffaf1;
+  --muted: #e2d6c2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--white);
+  background: var(--green);
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* ОБЩИЙ НЕПОДВИЖНЫЙ ФОН */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: url("background.jpg") center center / cover no-repeat;
+  transform: scale(1.02);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(22, 37, 31, .78),
+      rgba(22, 37, 31, .72) 50%,
+      rgba(22, 37, 31, .86)
+    );
+}
+
+/* ОБЩЕЕ ОФОРМЛЕНИЕ СЛАЙДОВ */
+
+.slide {
+  min-height: 100svh;
+  padding: 65px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  max-width: 720px;
+  padding: 55px 55px;
+  border: 1px solid rgba(212,180,119,.5);
+  background: rgba(32, 49, 42, .76);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 70px rgba(0,0,0,.18);
+}
+
+.content::before,
+.content::after {
+  content: "✦";
+  position: absolute;
+  color: var(--gold);
+  font-size: 17px;
+}
+
+.content::before {
+  top: 18px;
+  left: 20px;
+}
+
+.content::after {
+  bottom: 18px;
+  right: 20px;
+}
+
+.top-line {
+  width: 65px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 28px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 23px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(35px, 7vw, 57px);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: clamp(33px, 6vw, 47px);
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.description {
+  max-width: 530px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--cream);
+}
+
+.signature {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 23px;
+  font-style: italic;
+  margin-top: 28px;
+}
+
+.divider {
+  width: 100px;
+  height: 1px;
+  background: var(--gold);
+  opacity: .7;
+  margin: 28px auto;
+}
+
+/* ПЕРВЫЙ СЛАЙД */
+
+.first-slide .content {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.first-slide h1 {
+  margin-bottom: 30px;
+}
+
+.first-slide .description {
+  font-size: 17px;
+}
+
+/* ВТОРОЙ СЛАЙД */
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 35px auto;
+  max-width: 440px;
+  text-align: left;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.detail-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(212,180,119,.7);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 21px;
+}
+
+.detail-label {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.detail-value {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--white);
+}
+
+.restaurant {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: var(--gold);
+}
+
+/* ТРЕТИЙ СЛАЙД */
+
+.request-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--cream);
+  max-width: 510px;
+  margin: 0 auto 27px;
+}
+
+.secret {
+  border-top: 1px solid rgba(212,180,119,.4);
+  border-bottom: 1px solid rgba(212,180,119,.4);
+  padding: 23px 10px;
+  margin: 27px 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--cream);
+}
+
+.secret strong {
+  display: block;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* ФОРМА */
+
+.form {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.form label {
+  display: block;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 9px;
+}
+
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+  padding: 15px 16px;
+  border: 1px solid rgba(212,180,119,.45);
+  border-radius: 0;
+  outline: none;
+  background: rgba(255,255,255,.07);
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+  margin-bottom: 21px;
+  transition: .3s;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,.11);
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: rgba(255,250,241,.55);
+}
+
+.form select option {
+  background: var(--green);
+  color: white;
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 85px;
+}
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #26362e;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.whatsapp-button:hover {
+  background: var(--cream);
+  transform: translateY(-3px);
+}
+
+.whatsapp-button span {
+  font-size: 21px;
+}
+
+.form-note {
+  color: rgba(255,250,241,.6);
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* ПОСЛЕДНЯЯ СТРОКА */
+
+.footer {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 19px;
+  margin-top: 25px;
+}
+
+/* АНИМАЦИЯ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+
+@media(max-width:600px) {
+  .slide {
+    padding: 30px 14px;
+    min-height: 100svh;
+  }
+
+  .content {
+    padding: 43px 23px;
+  }
+
+  .first-slide .content {
+    padding: 55px 23px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .first-slide .description {
+    font-size: 15px;
+  }
+
+  .detail {
+    gap: 14px;
+  }
+
+  .detail-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .detail-value {
+    font-size: 14px;
+  }
+
+  .restaurant {
+    font-size: 21px;
+  }
+
+  .request-text,
+  .secret {
+    font-size: 14px;
+  }
+
+  .form input,
+  .form textarea,
+  .form select {
+    font-size: 16px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- СЛАЙД 1: ПРИГЛАШЕНИЕ -->
+
+<section class="slide first-slide">
+  <div class="content reveal">
+    <div class="top-line"></div>
+
+    <div class="eyebrow">С радостью приглашаем</div>
+
+    <h1>
+      Дорогие<br>
+      родные и близкие!
+    </h1>
+
+    <div class="divider"></div>
+
+    <p class="description">
+      Приглашаем вас разделить с нами особенный праздник —
+      юбилей нашего любимого папы и дедушки.
+    </p>
+
+    <h2 class="gold" style="margin-top:30px;margin-bottom:15px;">
+      Авакян Койрун
+    </h2>
+
+    <p class="description">
+      Будем счастливы провести этот день вместе с вами!
+    </p>
+
+    <div class="signature">С теплом и любовью</div>
+
+    <div class="divider"></div>
+    <div class="eyebrow" style="margin:0;">Листайте ниже</div>
+  </div>
+</section>
+
+
+<!-- СЛАЙД 2: ДАТА И МЕСТО -->
+
+<section class="slide">
+  <div class="content reveal">
+
+    <div class="top-line"></div>
+
+    <div class="eyebrow">Будем ждать вас</div>
+
+    <h2>Встречаемся<br><span class="gold">на празднике!</span></h2>
+
+    <div class="details">
+
+      <div class="detail">
+        <div class="detail-icon">✧</div>
+        <div>
+          <div class="detail-label">Дата</div>
+          <div class="detail-value">2 января 2027 года</div>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="detail-icon">◷</div>
+        <div>
+          <div class="detail-label">Время</div>
+          <div class="detail-value">17:00</div>
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="detail-icon">⌖</div>
+        <div>
+          <div class="detail-label">Место проведения</div>
+          <div class="detail-value">
+            <span class="restaurant">Ресторан «Усадьба»</span><br>
+            г. Усть-Лабинск,<br>
+            ул. Демьяна Бедного, 249
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="description">
+      Будем очень рады видеть вас в этот особенный день!
+      Вместе отметим важную дату, разделим радость
+      и вспомним самые тёплые моменты.
+    </p>
+
+    <div class="signature">До скорой встречи!</div>
+
+  </div>
+</section>
+
+
+<!-- СЛАЙД 3: ПОДТВЕРЖДЕНИЕ -->
+
+<section class="slide">
+  <div class="content reveal">
+
+    <div class="top-line"></div>
+
+    <div class="eyebrow">Один маленький вопрос</div>
+
+    <h2>Будете <span class="gold">с нами?</span></h2>
+
+    <p class="request-text">
+      Пожалуйста, подтвердите своё присутствие
+      до <span class="gold">10 декабря</span>, указав
+      количество гостей и ФИО каждого присутствующего.
+    </p>
+
+    <div class="secret">
+      <strong>Тсс... это сюрприз! 🤫</strong>
+      У нас есть одна маленькая просьба —
+      давайте сохраним предстоящее торжество
+      в секрете от именинника, чтобы этот день
+      стал для него настоящим сюрпризом!
+    </div>
+
+    <form class="form" id="attendanceForm">
+
+      <label for="guestName">ВАШЕ ИМЯ И ФАМИЛИЯ</label>
+      <input
+        id="guestName"
+        type="text"
+        placeholder="Например, Иван Иванов"
+        autocomplete="name"
+        required
+      >
+
+      <label for="guestCount">СКОЛЬКО ЧЕЛОВЕК ПРИДЁТ, ВКЛЮЧАЯ ВАС?</label>
+      <select id="guestCount" required>
+        <option value="" disabled selected>Выберите количество</option>
+        <option value="1">1 человек</option>
+        <option value="2">2 человека</option>
+        <option value="3">3 человека</option>
+        <option value="4">4 человека</option>
+        <option value="5">5 человек</option>
+        <option value="6">6 человек</option>
+        <option value="7">7 человек</option>
+        <option value="8">8 человек</option>
+        <option value="9">9 человек</option>
+        <option value="10">10 человек</option>
+      </select>
+
+      <label for="otherGuests">ФИО ОСТАЛЬНЫХ ГОСТЕЙ</label>
+      <textarea
+        id="otherGuests"
+        placeholder="Укажите имена и фамилии остальных гостей. Если придёте один — оставьте поле пустым."
+      ></textarea>
+
+      <button type="submit" class="whatsapp-button">
+        <span>✉</span>
+        ПОДТВЕРДИТЬ ПРИСУТСТВИЕ
+      </button>
+
+      <div class="form-note">
+        После нажатия откроется WhatsApp с готовым сообщением.
+        Останется только отправить его.
+      </div>
+
+    </form>
+
+    <div class="divider"></div>
+
+    <div class="footer">
+      С любовью,<br>
+      семья Авакян ❤️
+    </div>
+
+  </div>
+</section>
+
+
+<script>
+
+/* ===================================
+   WHATSAPP
+   ВСТАВЬТЕ СЮДА НОМЕР ПОЛУЧАТЕЛЯ
+   В МЕЖДУНАРОДНОМ ФОРМАТЕ
+   ТОЛЬКО ЦИФРЫ, БЕЗ ПРОБЕЛОВ И +
+=================================== */
+
+const whatsappNumber = "7XXXXXXXXXX";
+
+
+/* ФОРМИРОВАНИЕ СООБЩЕНИЯ */
+
+document.getElementById("attendanceForm").addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const name = document.getElementById("guestName").value.trim();
+  const count = Number(document.getElementById("guestCount").value);
+  const otherGuests = document.getElementById("otherGuests").value.trim();
+
+  if (!name || !count) {
+    alert("Пожалуйста, заполните все обязательные поля.");
+    return;
+  }
+
+  if (!/^[\d+]+$/.test(whatsappNumber) || whatsappNumber.includes("X")) {
+    alert("Необходимо сначала указать номер WhatsApp в коде сайта.");
+    return;
+  }
+
+  if (count > 1 && !otherGuests) {
+    alert("Пожалуйста, укажите ФИО остальных гостей.");
+    return;
+  }
+
+  const message =
+`Здравствуйте! Подтверждаю своё присутствие на юбилее Авакяна Койруна.
+
+Имя и фамилия: ${name}
+Количество гостей: ${count}
+
+ФИО остальных гостей:
+${count === 1 ? "Приду один/одна" : otherGuests}
+
+До встречи!`;
+
+  const url = "https://wa.me/" + whatsappNumber +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+
+});
+
+
+/* ПЛАВНОЕ ПОЯВЛЕНИЕ СЛАЙДОВ */
+
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+
+}, {
+  threshold: 0.15
+});
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
