@@ -466,10 +466,74 @@ h2 {
     transition-duration: .01ms !important;
   }
 }
+  
+/* КНОПКА МУЗЫКИ */
+
+.music-button {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+
+  border: 1px solid var(--gold);
+  background: rgba(20, 30, 25, .75);
+  color: var(--gold);
+
+  font-size: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  transition: .3s;
+}
+
+.music-button:hover {
+  background: var(--gold);
+  color: var(--green);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.music-button.playing {
+  animation: musicPulse 1.8s infinite;
+}
+
+@keyframes musicPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212,180,119,.35);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(212,180,119,0);
+  }
+}
+
+@media(max-width:600px) {
+  .music-button {
+    width: 46px;
+    height: 46px;
+    right: 13px;
+    font-size: 23px;
+  }
+}
+
 </style>
 </head>
 
 <body>
+
+  
+<audio id="backgroundMusic" src="music.mp3" loop preload="none"></audio>
+
+<button class="music-button" id="musicButton"
+        type="button" aria-label="Включить музыку">
+  ♪
+</button>
 
 <!-- СЛАЙД 1: ПРИГЛАШЕНИЕ -->
 
@@ -572,10 +636,7 @@ h2 {
       стал для него настоящим сюрпризом!
     </div>
 
-    <form class="form" id="attendanceForm">
-
-   
-<form class="form" id="attendanceForm">
+  <form class="form" id="attendanceForm">
 
   <label for="guestCount">КОЛИЧЕСТВО ГОСТЕЙ</label>
   <select id="guestCount" required>
@@ -690,6 +751,35 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reveal").forEach(el => {
   observer.observe(el);
+});
+
+/* УПРАВЛЕНИЕ МУЗЫКОЙ */
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+musicButton.addEventListener("click", async function() {
+
+  if (music.paused) {
+    try {
+      await music.play();
+
+      musicButton.textContent = "Ⅱ";
+      musicButton.classList.add("playing");
+      musicButton.setAttribute("aria-label", "Остановить музыку");
+
+    } catch (error) {
+      alert("Не удалось запустить музыку. Проверьте файл music.mp3.");
+    }
+
+  } else {
+    music.pause();
+
+    musicButton.textContent = "♪";
+    musicButton.classList.remove("playing");
+    musicButton.setAttribute("aria-label", "Включить музыку");
+  }
+
 });
 
 </script>
