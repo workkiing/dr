@@ -548,47 +548,43 @@ h2 {
 
     <form class="form" id="attendanceForm">
 
-      <label for="guestName">ВАШЕ ИМЯ И ФАМИЛИЯ</label>
-      <input
-        id="guestName"
-        type="text"
-        placeholder="Например, Иван Иванов"
-        autocomplete="name"
-        required
-      >
+   
+<form class="form" id="attendanceForm">
 
-      <label for="guestCount">СКОЛЬКО ЧЕЛОВЕК ПРИДЁТ, ВКЛЮЧАЯ ВАС?</label>
-      <select id="guestCount" required>
-        <option value="" disabled selected>Выберите количество</option>
-        <option value="1">1 человек</option>
-        <option value="2">2 человека</option>
-        <option value="3">3 человека</option>
-        <option value="4">4 человека</option>
-        <option value="5">5 человек</option>
-        <option value="6">6 человек</option>
-        <option value="7">7 человек</option>
-        <option value="8">8 человек</option>
-        <option value="9">9 человек</option>
-        <option value="10">10 человек</option>
-      </select>
+  <label for="guestCount">КОЛИЧЕСТВО ГОСТЕЙ</label>
+  <select id="guestCount" required>
+    <option value="" disabled selected>Выберите количество</option>
+    <option value="1">1 человек</option>
+    <option value="2">2 человека</option>
+    <option value="3">3 человека</option>
+    <option value="4">4 человека</option>
+    <option value="5">5 человек</option>
+    <option value="6">6 человек</option>
+    <option value="7">7 человек</option>
+    <option value="8">8 человек</option>
+    <option value="9">9 человек</option>
+    <option value="10">10 человек</option>
+  </select>
 
-      <label for="otherGuests">ФИО ОСТАЛЬНЫХ ГОСТЕЙ</label>
-      <textarea
-        id="otherGuests"
-        placeholder="Укажите имена и фамилии остальных гостей. Если придёте один — оставьте поле пустым."
-      ></textarea>
+  <label for="otherGuests">ФИО ВСЕХ ПРИСУТСТВУЮЩИХ</label>
+  <textarea
+    id="otherGuests"
+    placeholder="Напишите имя и фамилию каждого гостя"
+    required
+  ></textarea>
 
-      <button type="submit" class="whatsapp-button">
-        <span>✉</span>
-        ПОДТВЕРДИТЬ ПРИСУТСТВИЕ
-      </button>
+  <button type="submit" class="whatsapp-button">
+    <span>✉</span>
+    ПОДТВЕРДИТЬ ПРИСУТСТВИЕ
+  </button>
 
-      <div class="form-note">
-        После нажатия откроется WhatsApp с готовым сообщением.
-        Останется только отправить его.
-      </div>
+  <div class="form-note">
+    После нажатия откроется WhatsApp с готовым сообщением.
+    Останется только отправить его.
+  </div>
 
-    </form>
+</form>
+
 
     <div class="divider"></div>
 
