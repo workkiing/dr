@@ -611,37 +611,31 @@ const whatsappNumber = "79182415678";
 
 /* ФОРМИРОВАНИЕ СООБЩЕНИЯ */
 
+
 document.getElementById("attendanceForm").addEventListener("submit", function(e) {
 
   e.preventDefault();
 
-  const name = document.getElementById("guestName").value.trim();
   const count = Number(document.getElementById("guestCount").value);
-  const otherGuests = document.getElementById("otherGuests").value.trim();
+  const guests = document.getElementById("otherGuests").value.trim();
 
-  if (!name || !count) {
-    alert("Пожалуйста, заполните все обязательные поля.");
+  if (!count || !guests) {
+    alert("Пожалуйста, заполните оба поля.");
     return;
   }
 
   if (!/^[\d+]+$/.test(whatsappNumber) || whatsappNumber.includes("X")) {
-    alert("Необходимо сначала указать номер WhatsApp в коде сайта.");
-    return;
-  }
-
-  if (count > 1 && !otherGuests) {
-    alert("Пожалуйста, укажите ФИО остальных гостей.");
+    alert("Необходимо указать номер WhatsApp в коде сайта.");
     return;
   }
 
   const message =
-`Здравствуйте! Подтверждаю своё присутствие на юбилее Авакяна Койруна.
+`Здравствуйте! Подтверждаем присутствие на юбилее Авакяна Койруна.
 
-Имя и фамилия: ${name}
 Количество гостей: ${count}
 
-ФИО остальных гостей:
-${count === 1 ? "Приду один/одна" : otherGuests}
+ФИО присутствующих:
+${guests}
 
 До встречи!`;
 
@@ -651,6 +645,7 @@ ${count === 1 ? "Приду один/одна" : otherGuests}
   window.open(url, "_blank");
 
 });
+
 
 
 /* ПЛАВНОЕ ПОЯВЛЕНИЕ СЛАЙДОВ */
